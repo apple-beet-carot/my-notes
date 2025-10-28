@@ -309,8 +309,10 @@ Enable the `Intercept` feature, then click the `Analyze` button in the `Analyze 
 ### Step11. What system user is the internal System Monitor website running as on Sea?
 If a `root-owned` file is being accessed, the service is probably running as root. So, on the system monitoring page, click the `Analyze` button again, change the `log_file` parameter's value to `/root/root.txt`, and submit the request to the server via `Burp Suite`.
 ![[../Images/content/Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028113010220.png]]
+
 Then you got bad message.
 ![[../Images/content/Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028131303233.png]]
+
 The system detected `/root/root.txt` as a suspicious keyword. I attempted to evade detection by chaining another command with a semicolon (`;`).
 ![[../Images/content/Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028131320486.png]]
 ### Step12. Submit the flag located in the root user's home directory.
