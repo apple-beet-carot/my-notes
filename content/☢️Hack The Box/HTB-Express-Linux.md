@@ -6,6 +6,10 @@ tags:
   - linux
   - dfir
   - hacking
+  - ike
+  - psk
+  - wordlists
+  - CVE-2025-32463
 draft: false
 ---
 ### How to get the User flag?
