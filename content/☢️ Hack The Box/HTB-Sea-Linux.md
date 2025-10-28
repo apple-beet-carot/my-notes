@@ -307,21 +307,21 @@ ssh -L 8888:localhost:8080 amay@target_IP_address
 ```
 You need to use a `web proxy tool` such as `Burp Suite` to inspect `POST` traffic.
 
-![[../Images/content/☢️Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028145531865.png]]
+![[../Images/content/☢️ Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028214051943.png]]
 Enable the `Intercept` feature, then click the `Analyze` button in the `Analyze Log File` section.
 
-![[../Images/content/☢️Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028145531914.png]]
+![[../Images/content/☢️ Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028214051976.png]]
 ### Step11. What system user is the internal System Monitor website running as on Sea?
 If a `root-owned` file is being accessed, the service is probably running as root. So, on the system monitoring page, click the `Analyze` button again, change the `log_file` parameter's value to `/root/root.txt`, and submit the request to the server via `Burp Suite`.
 
-![[../Images/content/☢️Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028145531995.png]]
+![[../Images/content/☢️ Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028214052005.png]]
 
 Then you got bad message.
 
-![[../Images/content/☢️Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028145532042.png]]
+![[../Images/content/☢️ Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028214052040.png]]
 
 The system detected `/root/root.txt` as a suspicious keyword. I attempted to evade detection by chaining another command with a semicolon (`;`).
 
-![[../Images/content/☢️Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028145532114.png]]
+![[../Images/content/☢️ Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028214052085.png]]
 ### Step12. Submit the flag located in the root user's home directory.
 You just got the root flag in Step11.
