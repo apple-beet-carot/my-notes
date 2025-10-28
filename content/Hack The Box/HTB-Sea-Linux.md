@@ -201,6 +201,7 @@ Includes animations.
 ```
 ### Step4. What is the 2023 CVE ID for an unauthenticated cross site scripting vulnerability in WonderCMS that can lead to remote code execution?
 #cve-2023-41425
+
 Use google with keywords in the quiz.
 - https://nvd.nist.gov/vuln/detail/CVE-2023-41425
 ### Step5. What system user on Sea is the website running as?
@@ -234,6 +235,7 @@ www-data@sea:/var/www/sea/themes/shell$ ls
 ```
 ### Step6. What is the name of the file that holds the hash of the admin password for WonderCMS on Sea?
 #wondercms #grep
+
 Run grep with specific options in the parent directory of the web pages. I chose "password".
 ```sh
 www-data@sea:/var/www/sea$ grep -R -n --color=auto "password" .
@@ -264,6 +266,7 @@ www-data@sea:/var/www/sea$
 ```
 ### Step7. What is the amay user's password on Sea?
 #hashcat
+
 Crack the hash obtained earlier using a cracking tool such as `Hashcat` or `John the Ripper`.
 ```sh
 ┌──(kali㉿kali)-[~/htb/CVE-2023-41425-wonderCMS_RCE]
@@ -282,6 +285,7 @@ amay@sea:~$
 ```
 ### Step9. On what port is there a webserver listening only on localhost?
 #netstat
+
 Run `netstat` with appropriate options and pipe the output to `grep` to filter for `LISTEN`. `0.0.0.0` means the service is accessible from external hosts, while `127.0.0.1` means it's only accessible locally.
 ```sh
 amay@sea:~$ netstat -an | grep LISTEN
@@ -293,7 +297,7 @@ tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN
 tcp6       0      0 :::22                   :::*                    LISTEN 
 ```
 ### Step10. What HTTP POST parameter contains the path to a file when submitted from the System Monitor website?
-#localportforwarding #ssh #tunneling
+#localportforwarding #ssh #tunneling #burpsuite #webproxy #intercept
 At first, you have to run ssh command with specific options. This command creates a secure SSH tunnel that forwards your local port 8888 to the remote host’s localhost:8080.
 ```
 ssh -L 8888:localhost:8080 amay@target_IP_address
@@ -302,10 +306,10 @@ ssh -L 8888:localhost:8080 amay@target_IP_address
 # You PC -> (local:8888) -> SSH client -> Secured SSH connection -> Remote SSH server -> (remote localhost:8080)
 ```
 You need to use a `web proxy tool` such as `Burp Suite` to inspect `POST` traffic.
-#burpsuite #webproxy
+
 ![[../Images/content/Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028112929064.png]]
 Enable the `Intercept` feature, then click the `Analyze` button in the `Analyze Log File` section.
-#intercept
+
 ![[../Images/content/Hack The Box/HTB-Sea-Linux/HTB-Sea-Linux-20251028112951351.png]]
 ### Step11. What system user is the internal System Monitor website running as on Sea?
 If a `root-owned` file is being accessed, the service is probably running as root. So, on the system monitoring page, click the `Analyze` button again, change the `log_file` parameter's value to `/root/root.txt`, and submit the request to the server via `Burp Suite`.
