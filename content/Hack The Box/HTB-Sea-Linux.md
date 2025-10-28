@@ -1,12 +1,13 @@
 ---
 title: HTB-Sea-Linux
-date: 2025-10-28
+date: 2025-10-27
 tags:
   - htb
   - dfir
   - linux
   - hacking
   - feature/emitter
+draft: false
 ---
 ### Step1. How many open TCP ports are listening on Sea?
 You can check opened TCP ports via nmap or rustscan.
