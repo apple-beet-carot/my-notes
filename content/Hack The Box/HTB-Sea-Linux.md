@@ -6,7 +6,6 @@ tags:
   - dfir
   - linux
   - hacking
-  - feature/emitter
 draft: false
 ---
 ### Step1. How many open TCP ports are listening on Sea?
@@ -298,6 +297,7 @@ tcp6       0      0 :::22                   :::*                    LISTEN
 ```
 ### Step10. What HTTP POST parameter contains the path to a file when submitted from the System Monitor website?
 #localportforwarding #ssh #tunneling #burpsuite #webproxy #intercept
+
 At first, you have to run ssh command with specific options. This command creates a secure SSH tunnel that forwards your local port 8888 to the remote host’s localhost:8080.
 ```
 ssh -L 8888:localhost:8080 amay@target_IP_address
