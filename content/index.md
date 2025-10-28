@@ -1,12 +1,9 @@
 ---
-title: title
-date: 1099-01-01
+title: Garden home
+date: 2025-01-01
 tags:
-  - index
-draft:
+draft: false
 ---
+Welcome to my digital garden home. Enjoy exploring my posts, and feel free to contact me if you have any questions.
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
-
-![[Images/content/index/index-20251028102742893.png]]
+![[../abc.png]]
