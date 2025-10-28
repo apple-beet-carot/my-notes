@@ -2,6 +2,10 @@
 title: HTB-Express-Linux
 date: 2025-10-23
 tags:
+  - htb
+  - linux
+  - dfir
+  - hacking
 draft: false
 ---
 ### How to get the User flag?
