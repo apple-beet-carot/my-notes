@@ -1,5 +1,10 @@
-
-![[index-20251028101756134.png]]
+---
+title: title
+date: 1099-01-01
+tags:
+  - index
+draft:
+---
 
 This is a blank Quartz installation.
 See the [documentation](https://quartz.jzhao.xyz) for how to get started.
